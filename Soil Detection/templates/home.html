@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Soil Optimization Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <style>
+        .crop-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .crop-card {
+            text-align: center;
+            width: 30%;
+        }
+
+        .crop-card img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Soil Optimization Dashboard</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('help') }}">Farmer Help</a>
+            <a href="{{ url_for('disease_detection') }}">Disease Detection</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>About Our Product</h2>
+            <p>Welcome to the Soil Optimization Dashboard, your one-stop solution for monitoring and improving soil conditions to optimize agricultural yield. Our system provides real-time data on temperature, humidity, nutrients, and yield to help you make informed decisions. Get tailored plant suggestions based on your soil conditions and receive expert advice to maximize your farm's productivity.</p>
+            <img src="{{ url_for('static', filename='gettyimages-758303533-612x612.jpg') }}" alt="Farmer in field" style="width:100%; height:auto;">
+        </section>
+        <section id="Weather">
+            <h2>Weather Alert</h2>                
+            <p style="font-size: 20px;">Based on today's weather forecast, <b>there is a possibility of rain</b>. Therefore, you may not need to irrigate your field today. Additionally, <b>please ensure that the pathways for rainwater harvesting are clear</b>. Have a wonderful day!</p>
+            <button type="submit" style="padding: 10px 20px; margin-top: 10px;">
+                <a href="{{ url_for('dashboard') }}">Details</a>
+            </button>
+            <style>
+                a:link, a:visited {
+                    color: #ffffff;
+                    text-decoration: none;
+                }
+        
+                a:hover, a:active {
+                    color: #ffffff;
+                    text-decoration: none;
+                }
+            </style>
+            <div id="response"></div>
+        </section>
+        <section id="Crops">
+            <h2>Crops You Can Plant</h2>
+            <div class="crop-section">
+                <div class="crop-card">
+                    <img src="{{ url_for('static', filename='gettyimages-479629438-612x612.jpg') }}" alt="Wheat">
+                    <h3>Wheat</h3>
+                    <p>Wheat is a cereal grain that is a worldwide staple food. It thrives in a temperate climate with moderate rainfall.</p>
+                </div>
+                <div class="crop-card">
+                    <img src="{{ url_for('static', filename='istockphoto-1372064797-612x612.jpg') }}" alt="Banana">
+                    <h3>Banana</h3>
+                    <p>Bananas grow well in tropical climates with high humidity and warm temperatures. They require well-drained soil.</p>
+                </div>
+                <div class="crop-card">
+                    <img src="{{ url_for('static', filename='360_F_704596187_RkLeLqposeLiKPOJiHWGenQCcijUlA0g.jpg') }}" alt="Rice">
+                    <h3>Rice</h3>
+                    <p>Rice is a staple food for a large part of the world's population. It grows best in flooded fields in warm climates.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Soil Optimization Dashboard</p>
+    </footer>
+</body>
+</html>
+

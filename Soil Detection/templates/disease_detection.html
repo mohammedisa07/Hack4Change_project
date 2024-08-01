@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disease Detection - Soil Optimization Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" />
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</head>
+<body>
+    <header>
+        <h1>Soil Optimization Dashboard</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('help') }}">Farmer Help</a>
+            <a href="{{ url_for('disease_detection') }}">Disease Detection</a>
+        </nav>
+    </header>
+    <main>
+        <section id="disease-detection">
+            <h2>Disease Detection</h2>
+            
+            <!-- Image upload form -->
+            <form id="uploadForm">
+                <input type="file" id="imageUpload" accept="image/*" />
+                <button type="submit">Submit</button>
+            </form>
+            
+            <div id="imageDisplay"></div>
+            <div id="contentDisplay"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Soil Optimization Dashboard</p>
+    </footer>
+    
+    <!-- Link to the JavaScript file for image upload functionality -->
+    <script src="{{ url_for('static', filename='imageUpload.js') }}"></script>
+</body>
+</html>
